@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stock & Mutual Fund Analysis – WizeWealth</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#D5AD2A',secondary:'#1E1E1E'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<link rel="icon" type="image/x-icon" href="/favicon.png" />
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+background-color: #121212;
+color: white;
+font-family: 'Poppins', sans-serif;
+}
+.card {
+background-color: #1E1E1E;
+border-radius: 12px;
+}
+.gain {
+color: #00C853;
+}
+.loss {
+color: #FF3B30;
+}
+.risk-high {
+color: #FF3B30;
+}
+.risk-moderate {
+color: #FFA726;
+}
+.risk-low {
+color: #00C853;
+}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-91J623P1M6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-91J623P1M6');
+</script>
+
+</head>
+<body>
+<!-- Desktop Top Navbar (md only) -->
+<nav class="hidden md:flex fixed top-0 left-0 w-full bg-[#121212] z-50 border-b border-gray-800 h-16 items-center px-8" style="justify-content: center;">
+  <div class="font-['Poppins'] flex flex-1 justify-end items-center space-x-24 max-w-xs">
+    <a href="index.html" class="text-gray-300 hover:text-primary transition text-lg">Home</a>
+    <a href="News.html" class="text-gray-300 hover:text-primary transition text-lg">News</a>
+  </div>
+  <div class="flex-none flex justify-center mx-44">
+    <span class="font-['Poppins'] text-primary text-2xl font-bold pointer-events-auto">WizeWealth</span>
+  </div>
+  <div class="font-['Poppins'] flex flex-1 justify-start items-center space-x-24 max-w-xs ml-0">
+    <a href="Invest.html" class="text-primary hover:text-primary transition text-lg">Invest</a>
+    <a href="Wizebot.html" class="text-gray-300 hover:text-primary transition text-lg">WizeBot</a>
+  </div>
+</nav>
+<!-- Header (mobile only) -->
+<header class="fixed w-full top-0 bg-[#121212] z-10 p-4 border-b border-gray-800 md:hidden">
+  <h1 class="text-primary text-2xl font-bold text-center">WizeWealth</h1>
+</header>
+<!-- Main Content -->
+<main class="mt-16 px-4 pb-16">
+<!-- Toggle Buttons -->
+<div class="flex space-x-2 mb-6 mt-12 pt-5">
+<a href="IPO-list.html" class="w-[38%] py-4 border border-primary border-2 text-white rounded-button bg-transparent text-center">
+  <button>IPO</button>
+</a>
+<a href="Top-gainers-losers.html" class="w-[62%] py-4 text-white rounded-button bg-green-800 text-center">
+<button>Top gainers/losers</button>
+</a>
+</div>
+<!-- Stocks Analysis Section -->
+<div class="mb-8">
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-lg font-semibold md:px-8">Stocks Analysis</h2>
+<a href="Stocks_Analysis.html" class="text-primary text-sm md:px-10">See More</a>
+</div>
+<div class="md:px-8">
+<div class="space-y-4 md:space-y-0 md:grid md:grid-cols-2 md:gap-12">
+<!-- Stock Card 1 -->
+<div class="card p-4">
+  <div class="flex items-center justify-between mb-3">
+  <div class="flex items-center">
+  <div class="w-10 h-10 flex items-center justify-center rounded-full mr-3 overflow-hidden bg-white">
+  <img src="https://s3-symbol-logo.tradingview.com/jupiter-wagons-ltd--600.png" alt="Jupiter Wagons Logo" class="object-contain">
+  </div>
+  <div>
+  <h3 class="font-medium">Jupiter Wagons Ltd</h3>
+  <p class="text-xs text-gray-400">30/07/2025</p>
+  </div>
+  </div>
+  <div class="text-right">
+  <p class="text-xs text-gray-400">Current Price</p>
+  <p class="font-medium text-lg">₹387.60</p>
+  </div>
+  </div>
+  <div class="grid grid-cols-3 gap-2 mb-3">
+  <div>
+  <p class="text-xs text-gray-400">Mkt. Cap</p>
+  <p class="font-medium">₹14,794Cr</p>
+  </div>
+  <div>
+  <p class="text-xs text-gray-400">52W high</p>
+  <p class="font-medium text-primary">₹631.95</p>
+  </div>
+  <div>
+  <p class="text-xs text-gray-400">52W low</p>
+  <p class="font-medium loss">₹270.05</p>
+  </div>
+  </div>
+  <div class="flex justify-between items-center">
+  <div class="bg-[#1A2E1A] px-3 py-1 rounded-full">
+  <p class="text-sm gain">+31.6% potential</p>
+  </div>
+  <p class="text-xs text-gray-300 text-right">Massive Railway Tenders </p>
+  </div>
+  </div>
+<!-- Stock Card 2 -->
+<div class="card p-4">
+  <div class="flex items-center justify-between mb-3">
+  <div class="flex items-center">
+  <div class="w-10 h-10 flex items-center justify-center rounded-full mr-3 overflow-hidden bg-white">
+  <img src="https://trendlyne-media-mumbai-new.s3.amazonaws.com/profilepicture/484_profilepicture.png" alt="Olectra Greentech Logo" class="object-contain">
+  </div>
+  <div>
+  <h3 class="font-medium">Olectra Greentech</h3>
+  <p class="text-xs text-gray-400">28/07/2025</p>
+  </div>
+  </div>
+  <div class="text-right">
+  <p class="text-xs text-gray-400">Current Price</p>
+  <p class="font-medium text-lg">₹1,164.20</p>
+  </div>
+  </div>
+  <div class="grid grid-cols-3 gap-2 mb-3">
+  <div>
+  <p class="text-xs text-gray-400">Mkt. Cap</p>
+  <p class="font-medium">₹11,653Cr</p>
+  </div>
+  <div>
+  <p class="text-xs text-gray-400">52W high</p>
+  <p class="font-medium text-primary">₹1,787.00</p>
+  </div>
+  <div>
+  <p class="text-xs text-gray-400">52W low</p>
+  <p class="font-medium loss">₹989.95</p>
+  </div>
+  </div>
+  <div class="flex justify-between items-center">
+  <div class="bg-[#1A2E1A] px-3 py-1 rounded-full">
+  <p class="text-sm gain">+23.4% potential</p>
+  </div>
+  <p class="text-xs text-gray-300 text-right">Ev Industry Growth<br> Strong Govt. Policies</p>
+  
+  </div>
+  </div>
+
+
+</div>
+</div>
+</div>
+<!-- Mutual Fund Analysis Section -->
+<div class="mb-6">
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-lg font-semibold md:px-8">Mutual Fund Analysis</h2>
+<a href="MutualFund_Analysis.html" class="text-primary text-sm md:px-10">See More</a>
+</div>
+<div class="md:px-8">
+<div class="space-y-4 md:space-y-0 md:grid md:grid-cols-2 md:gap-12">
+<!-- Mutual Fund Card 1 -->
+<div class="card p-4">
+<div class="flex items-center mb-3">
+<div class="w-10 h-10 flex items-center justify-center rounded-full mr-3 overflow-hidden bg-white">
+<img src="https://assets1.cleartax-cdn.com/clearsave/images/1599738090_hdfc_mf_v4.png" alt="HDFC Flexi Cap Growth Logo" class="object-contain">
+</div>
+<div>
+<h3 class="font-medium">HDFC Flexi Cap Growth</h3>
+<span class="text-xs px-2 py-0.5 bg-red-900/30 rounded-full risk-high">High Risk</span>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-2 mb-3">
+<div>
+<p class="text-xs text-gray-400">NAV</p>
+<p class="font-medium">₹2193.55</p>
+</div>
+<div>
+<p class="text-xs text-gray-400 text ml-3">1Y</p>
+<p class="font-medium gain ml-3">+11.1%</p>
+</div>
+<div>
+<p class="text-xs text-gray-400">3Y</p>
+<p class="font-medium gain">+117.9%</p>
+</div>
+<div>
+<p class="text-xs text-gray-400">5Y</p>
+<p class="font-medium gain">+282.3%</p>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<div class="bg-[#1A2E1A] px-3 py-1 rounded-full">
+<p class="text-sm gain">+16.2% expected</p>
+</div>
+<div class="flex">
+<i class="ri-star-fill text-primary"></i>
+<i class="ri-star-fill text-primary"></i>
+<i class="ri-star-fill text-primary"></i>
+<i class="ri-star-fill text-primary"></i>
+<i class="ri-star-line text-gray-500"></i>
+</div>
+</div>
+</div>
+<!-- Mutual Fund Card 2 -->
+<div class="card p-4">
+<div class="flex items-center mb-3">
+<div class="w-10 h-10 flex items-center justify-center rounded-full mr-3 overflow-hidden bg-white">
+<img src="https://static.paytmmoney.com/amc-logo/SBIMF.png" alt="SBI Bluechip Fund Logo" class="object-contain">
+</div>
+<div>
+<h3 class="font-medium">SBI Bluechip Fund</h3>
+<span class="text-xs px-2 py-0.5 bg-amber-900/30 rounded-full risk-moderate">Moderate Risk</span>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-2 mb-3">
+<div>
+<p class="text-xs text-gray-400">NAV</p>
+<p class="font-medium">₹104.40</p>
+</div>
+<div>
+<p class="text-xs text-gray-400 ml-3">1Y</p>
+<p class="font-medium gain ml-3">+6.7%</p>
+</div>
+<div>
+<p class="text-xs text-gray-400">3Y</p>
+<p class="font-medium gain">+74.9%</p>
+</div>
+<div>
+<p class="text-xs text-gray-400">5Y</p>
+<p class="font-medium gain">+171.9%</p>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<div class="bg-[#1A2E1A] px-3 py-1 rounded-full">
+<p class="text-sm gain">+13.8% expected</p>
+</div>
+<div class="flex">
+<i class="ri-star-fill text-primary"></i>
+<i class="ri-star-fill text-primary"></i>
+<i class="ri-star-fill text-primary"></i>
+<i class="ri-star-fill text-primary"></i>
+<i class="ri-star-fill text-primary"></i>
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+<!-- Newsletter Subscription Section -->
+<div class="mb-8">
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-lg font-semibold md:px-8">Stay Updated</h2>
+</div>
+<div class="md:px-8">
+<div class="card p-6">
+<div class="text-center mb-6">
+<h3 class="text-xl font-semibold mb-2">Subscribe to Our Newsletter</h3>
+<p class="text-gray-400 text-sm">Get the latest investment insights and market updates delivered to your inbox</p>
+</div>
+<form id="newsletterForm" class="space-y-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+<input type="email" id="email" name="email" required 
+class="w-full px-4 py-3 bg-[#2A2A2A] border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors"
+placeholder="Enter your email address">
+</div>
+<div>
+<label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
+<input type="tel" id="phone" name="phone" required 
+class="w-full px-4 py-3 bg-[#2A2A2A] border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors"
+placeholder="Enter your phone number">
+</div>
+</div>
+<button type="submit" 
+class="w-full bg-primary text-white py-3 px-6 rounded-lg font-medium hover:bg-yellow-600 transition-colors flex items-center justify-center">
+<i class="ri-send-plane-fill mr-2"></i>
+Subscribe to Newsletter
+</button>
+</form>
+<div id="formMessage" class="mt-4 text-center hidden">
+<p id="messageText" class="text-sm"></p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation (mobile only) -->
+<nav class="fixed bottom-0 w-full bg-[#1A1A1A] border-t border-gray-800 z-50 md:hidden">
+  <div class="flex justify-around items-center h-16">
+    <a href="index.html" class="flex flex-col items-center justify-center w-1/4 h-full">
+      <div class="w-6 h-6 flex items-center justify-center">
+        <i class="ri-home-5-line text-gray-400 ri-lg"></i>
+      </div>
+      <span class="text-xs text-gray-400 mt-1">Home</span>
+    </a>
+    <a href="News.html" class="flex flex-col items-center justify-center w-1/4 h-full">
+      <div class="w-6 h-6 flex items-center justify-center">
+        <i class="ri-newspaper-line text-gray-400 ri-lg"></i>
+      </div>
+      <span class="text-xs text-gray-400 mt-1">News</span>
+    </a>
+    <a href="#" class="flex flex-col items-center justify-center w-1/4 h-full">
+      <div class="w-6 h-6 flex items-center justify-center">
+        <i class="ri-line-chart-line text-primary ri-lg"></i>
+      </div>
+      <span class="text-xs text-primary mt-1">Invest</span>
+    </a>
+    <a href="Wizebot.html" class="flex flex-col items-center justify-center w-1/4 h-full">
+      <div class="w-6 h-6 flex items-center justify-center">
+        <i class="ri-message-3-line text-gray-400 ri-lg"></i>
+      </div>
+      <span class="text-xs text-gray-400 mt-1">WizeBot</span>
+    </a>
+  </div>
+</nav>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Newsletter form submission
+const newsletterForm = document.getElementById('newsletterForm');
+const formMessage = document.getElementById('formMessage');
+const messageText = document.getElementById('messageText');
+
+newsletterForm.addEventListener('submit', async function(e) {
+e.preventDefault();
+    
+const email = document.getElementById('email').value;
+const phone = document.getElementById('phone').value;
+    
+// Show loading state
+const submitButton = newsletterForm.querySelector('button[type="submit"]');
+const originalButtonText = submitButton.innerHTML;
+submitButton.innerHTML = '<i class="ri-loader-4-line animate-spin mr-2"></i>Subscribing...';
+submitButton.disabled = true;
+    
+try {
+// Replace this URL with your actual backend URL after deployment
+const backendUrl = 'https://wizewealth-subscribers.onrender.com/subscribe';
+        
+const response = await fetch(backendUrl, {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json',
+},
+body: JSON.stringify({
+email: email,
+phone: phone
+})
+});
+        
+if (response.ok) {
+showMessage('Successfully subscribed to our newsletter!', 'success');
+newsletterForm.reset();
+} else {
+const errorData = await response.json();
+showMessage(errorData.message || 'Failed to subscribe. Please try again.', 'error');
+}
+} catch (error) {
+console.error('Error:', error);
+showMessage('Network error. Please check your connection and try again.', 'error');
+} finally {
+submitButton.innerHTML = originalButtonText;
+submitButton.disabled = false;
+}
+});
+    
+function showMessage(message, type) {
+messageText.textContent = message;
+messageText.className = `text-sm ${type === 'success' ? 'text-green-400' : 'text-red-400'}`;
+formMessage.classList.remove('hidden');
+        
+// Hide message after 5 seconds
+setTimeout(() => {
+formMessage.classList.add('hidden');
+}, 5000);
+}
+});
+</script>
+</body>
+</html>
